@@ -27,23 +27,25 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
         body: Column(
           children: [
             Expanded(
-              child: ListView.builder(
-                  itemCount: categories.length,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        Image.network(
-                          categories[index].image,
-                          width: double.infinity,
-                          height: 200,
-                        ),
-                        Text(
-                          categories[index].name,
-                          style: const TextStyle(fontSize: 30),
-                        )
-                      ],
-                    );
-                  }),
+              child: categories.isEmpty
+                  ? const Center(child: CircularProgressIndicator())
+                  : ListView.builder(
+                      itemCount: categories.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Image.network(
+                              categories[index].image,
+                              width: double.infinity,
+                              height: 200,
+                            ),
+                            Text(
+                              categories[index].name,
+                              style: const TextStyle(fontSize: 30),
+                            )
+                          ],
+                        );
+                      }),
             ),
           ],
         ),

@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_test/model/categories_model.dart';
+import 'package:riverpod_test/repos/peoples_repo.dart';
 
 final categoriesProvider =
     ChangeNotifierProvider<CategoriesProvider>((ref) => CategoriesProvider());
